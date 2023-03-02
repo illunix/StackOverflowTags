@@ -1,0 +1,25 @@
+﻿@using StackOverflowTags.Core.DTOs;
+@model IReadOnlyList<TagDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table-striped">
+    <thead>
+        <tr>
+            <th class="col-1">Name</th>
+            <th class="col-1">Usage Count</th>
+            <th class="col-1">Popularity Percentage</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tag in Model)
+        {
+            <tr>
+                <td>@tag.Name</td>
+                <td>@tag.UsageCount</td>
+                <td>@tag.PopularityPercentage.ToString("0.00")%</td>
+            </tr>
+        }
+    </tbody>
+</table>
